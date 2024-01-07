@@ -69,11 +69,7 @@ class _StockAppScreenState extends State<StockAppScreen> {
               children: [
                 Text(
                   '\$ $totalBalance',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 IconButton(
                   onPressed: () {
