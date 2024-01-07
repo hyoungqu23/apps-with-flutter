@@ -22,6 +22,15 @@ class MyApp extends ConsumerWidget {
       title: '타이틀?',
       routerConfig: routerConfig,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.blue,
+            fontSize: 48,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
     );
   }
 }
