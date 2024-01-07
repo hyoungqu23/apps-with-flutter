@@ -2,8 +2,15 @@ import 'package:apps_with_flutter/src/features/wallet_app/views/widgets/button.d
 import 'package:apps_with_flutter/src/features/wallet_app/views/widgets/card.dart';
 import 'package:flutter/material.dart';
 
-class StockAppScreen extends StatelessWidget {
+class StockAppScreen extends StatefulWidget {
   const StockAppScreen({super.key});
+
+  @override
+  State<StockAppScreen> createState() => _StockAppScreenState();
+}
+
+class _StockAppScreenState extends State<StockAppScreen> {
+  int totalBalance = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +64,30 @@ class StockAppScreen extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            const Text(
-              '\$5 194 382',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 48,
-                fontWeight: FontWeight.w500,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '\$ $totalBalance',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 48,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      totalBalance = totalBalance + 6428;
+                    });
+                  },
+                  icon: const Icon(
+                    Icons.add_box_rounded,
+                    color: Colors.white,
+                    size: 48,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 20,
