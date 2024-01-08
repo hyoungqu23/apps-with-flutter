@@ -2,14 +2,14 @@ import 'package:apps_with_flutter/src/features/wallet_app/views/widgets/button.d
 import 'package:apps_with_flutter/src/features/wallet_app/views/widgets/card.dart';
 import 'package:flutter/material.dart';
 
-class StockAppScreen extends StatefulWidget {
-  const StockAppScreen({super.key});
+class WalletAppScreen extends StatefulWidget {
+  const WalletAppScreen({super.key});
 
   @override
-  State<StockAppScreen> createState() => _StockAppScreenState();
+  State<WalletAppScreen> createState() => _WalletAppScreenState();
 }
 
-class _StockAppScreenState extends State<StockAppScreen> {
+class _WalletAppScreenState extends State<WalletAppScreen> {
   int totalBalance = 0;
 
   @override
