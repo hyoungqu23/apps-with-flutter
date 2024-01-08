@@ -42,7 +42,7 @@ final appsWithFlutterRoutes = <RouteBase>[
   GoRoute(
     name: Routes.walletApp['name'],
     path: Routes.walletApp['path']!,
-    builder: (context, state) => const StockAppScreen(),
+    builder: (context, state) => const WalletAppScreen(),
   ),
 ];
 
