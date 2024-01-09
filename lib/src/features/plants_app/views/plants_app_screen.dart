@@ -37,6 +37,65 @@ class PlantAppScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 0,
+                          horizontal: 16,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                        focusColor: Colors.amber,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.green,
+                          ),
+                        ),
+                        hintText: 'Search',
+                        hintStyle: TextStyle(
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                      color: Colors.green,
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Center(
+                        child: Icon(
+                          Icons.settings,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TabBar(
               padding: EdgeInsets.zero,
               tabAlignment: TabAlignment.start,
