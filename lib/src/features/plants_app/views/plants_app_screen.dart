@@ -209,6 +209,113 @@ class PlantAppScreen extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 12,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Popular',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.arrow_circle_right_outlined,
+                    color: Colors.green,
+                    size: 32,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                bottom: 20,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
+              ),
+              height: 120,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: popularPlantItems.length,
+                separatorBuilder: (context, index) => const SizedBox(width: 24),
+                itemBuilder: (context, index) {
+                  final String itemName = popularPlantItems[index]['name'];
+                  final itemPrice = popularPlantItems[index]['price'];
+                  final String itemAsset = popularPlantItems[index]['asset'];
+
+                  return Container(
+                    width: 280,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: Colors.green.shade50,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 20,
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                            clipBehavior: Clip.hardEdge,
+                            child: Image.asset(
+                              itemAsset,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 16,
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  itemName,
+                                  style: const TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  softWrap: false,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                Text('\$$itemPrice'),
+                              ],
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 16,
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Icon(
+                                Icons.add_circle_outlined,
+                                color: Colors.green,
+                                size: 28,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
