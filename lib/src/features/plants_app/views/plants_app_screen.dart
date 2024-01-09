@@ -35,6 +35,38 @@ class PlantAppScreen extends StatelessWidget {
     return DefaultTabController(
       length: navBarItems.length,
       child: Scaffold(
+        appBar: AppBar(
+          // elevation: 0,
+          backgroundColor: Colors.white,
+          // automaticallyImplyLeading: false,
+          // leadingWidth: 40,
+          // leading: TextButton(
+          //   onPressed: () {},
+          //   child: const Icon(Icons.arrow_back_ios),
+          // ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
+              ),
+              child: Container(
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.5),
+                      blurRadius: 2,
+                      offset: const Offset(0, 0),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+          ],
+        ),
         body: Column(
           children: [
             Padding(
