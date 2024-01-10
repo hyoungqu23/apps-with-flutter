@@ -1,3 +1,4 @@
+import 'package:apps_with_flutter/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,9 +16,10 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.indigo.shade50,
       appBar: AppBar(
         backgroundColor: Colors.indigo.shade50,
-        title: const Text(
-          'Exercise Flutter UIs',
-          style: TextStyle(
+        title: Text(
+          // 'Exercise Flutter UIs',
+          S.current.helloWorld,
+          style: const TextStyle(
             color: Colors.indigo,
             fontSize: 28,
             fontWeight: FontWeight.w900,
