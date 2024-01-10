@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:apps_with_flutter/src/common/routes/routes.dart';
@@ -22,6 +23,15 @@ class MyApp extends ConsumerWidget {
       title: '타이틀?',
       routerConfig: routerConfig,
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ko'),
+        Locale('en'),
+      ],
       theme: ThemeData(
         textTheme: const TextTheme(
           titleLarge: TextStyle(
