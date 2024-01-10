@@ -1,8 +1,9 @@
+import 'package:apps_with_flutter/generated/l10n.dart';
+import 'package:apps_with_flutter/src/common/routes/routes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:apps_with_flutter/src/common/routes/routes.dart';
 
 void main() {
   runApp(
@@ -24,14 +25,12 @@ class MyApp extends ConsumerWidget {
       routerConfig: routerConfig,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
+        S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('ko'),
-        Locale('en'),
-      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         textTheme: const TextTheme(
           titleLarge: TextStyle(
